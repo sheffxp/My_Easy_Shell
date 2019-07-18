@@ -1,9 +1,6 @@
 #!/bin/bash
 export PATH=$PATH:/usr/sbin
 
-тключаем ipv6
-ipv6_disable()
-{
 #-----------------
 # задаем переменные
 #-----------------
