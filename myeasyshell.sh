@@ -44,8 +44,8 @@ vers="For Debian"
 ver="v0.0.1"
 title="My Easy Shell"
 title_full="$title $ver"
-filename='new_myeasyshell.sh'
-updpath='https://raw.githubusercontent.com/sheffxp/My_Easy_Shell/master/myeasyshell.sh' #релиз
+filename='myeasyshell.sh'
+updpath='https://raw.githubusercontent.com/sheffxp/My_Easy_Shell/master/' #релиз
 
 
 #Задаём переменную с нужным количеством пробелов, чтобы меню не разъезжалось от смены версии
