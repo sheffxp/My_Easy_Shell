@@ -229,6 +229,7 @@ my_clear
 echo "$title"
 echo "$menu1"
 myread_dig pick
+case "$pick" in
 	1) #Показать общую информацию о системе
 		my_clear
 	;;
