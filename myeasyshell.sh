@@ -5,7 +5,7 @@ export PATH=$PATH:/usr/sbin
 # задаем переменные
 #-----------------
 vers="For Debian"
-ver="v0.0.2"
+ver="v0.0.2a"
 title="My Easy Shell"
 title_full="$title $ver"
 filename='myeasyshell.sh'
@@ -205,20 +205,21 @@ fi
 
 case "$pick" in
 1) #Показать общую информацию о системе
+	echo htuiertert
 	my_clear
 	showinfo
 	br
 	echo "Вычисляем Ваш IP на интерфейсе..."
 	#whatismyip
 	#my_clear
-	#showinfo
-	#br
-	#echo "Вычисляем Ваш внешний IP..."
+	showinfo
+	br
+	echo "Вычисляем Ваш внешний IP..."
 	#whatismyipext
-	#my_clear
-	#showinfo
-	#br
-	#wait
+	my_clear
+	showinfo
+	br
+	wait
 ;;
 
 
