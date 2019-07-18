@@ -5,7 +5,7 @@ export PATH=$PATH:/usr/sbin
 # задаем переменные
 #-----------------
 vers="For Debian"
-ver="v0.0.2a"
+ver="v0.0.2"
 title="My Easy Shell"
 title_full="$title $ver"
 filename='myeasyshell.sh'
@@ -205,7 +205,7 @@ echo ""
 wait()
 {
 echo "Нажмите любую клавишу, чтобы продолжить..."
-read -s -n 1
+read -s
 }
 
 #-----------------
