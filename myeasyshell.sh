@@ -232,6 +232,18 @@ myread_dig pick
 case "$pick" in
 	1) #Показать общую информацию о системе
 		my_clear
+		showinfo
+		br
+		echo "Вычисляем Ваш IP на интерфейсе..."
+		
+		my_clear
+		showinfo
+		br
+		echo "Вычисляем Ваш внешний IP..."
+		whatismyipext
+		my_clear
+		showinfo
+		wait
 	;;
 	2) #Провести тест скорости CPU
 		my_clear
