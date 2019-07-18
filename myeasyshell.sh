@@ -228,6 +228,10 @@ chosen=1
 my_clear
 echo "$title"
 echo "$menu1"
+myread_dig pick
+
+
+
 ;;
 
 
