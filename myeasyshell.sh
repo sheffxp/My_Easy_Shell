@@ -1,42 +1,9 @@
 #!/bin/bash
 export PATH=$PATH:/usr/sbin
 
-#установка доп софта 
-install_dop()
-{
-apt update
-apt upgrade
-apt install mc -y
-apt install htop -y
-apt install iftop -y
-apt install sudo -y
-apt install net-tools -y
-}
-
-#насторойка времени
-set_data_time()
-{
-export PATH=$PATH:/usr/sbin
-apt install ntpdate -y
-ntpdate-debian
-dpkg-reconfigure tzdata
-apt install ntp -y
-}
-
-#отключаем ipv6
+тключаем ipv6
 ipv6_disable()
 {
-
-systemctl restart ntp
-}
-
-#install_dop
-#set_data_time
-#ipv6_disable
-
-#---------------------------------------------
-
-echo "myshell -----------    $ver"
 #-----------------
 # задаем переменные
 #-----------------
@@ -162,25 +129,6 @@ chmod 777 $filename
 #----------------------------------------------------------------
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 menu=" 
 ┌─────────────────────────────────────────────┐ 
 │  $title  $ver$space│ 
@@ -207,29 +155,7 @@ menu="
 └───┴─────────────────────────────────────────┘
 "
 
-
-
-
-
-
-
-
-
-
 #-------------------------------------------------------------------
-
-
-
-
-#Определяем активный внешний интерфейс
-#whatismyiface() 
-#{
-# 
-#installed net-tools 
-#echo $exist
-#if [ $exist = "false" ];then apt install -y net-tools; fi
-#
-#}
 
 #информация  о системе
 showinfo() { 
@@ -258,13 +184,6 @@ echo "Ваш внешний IP определяется как: $ipext"
 }
 
 
-
-
-
-#whatismyiface
-
-whatismyipext
-showinfo
 
 #-----------------
 # Интерфейс
