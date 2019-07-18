@@ -36,12 +36,12 @@ systemctl restart ntp
 
 #---------------------------------------------
 
-echo "myshell -----------    v0.0.2"
+echo "myshell -----------    $ver"
 #-----------------
 # задаем переменные
 #-----------------
 vers="For Debian"
-ver="v0.0.1"
+ver="v0.0.2"
 title="My Easy Shell"
 title_full="$title $ver"
 filename='myeasyshell.sh'
