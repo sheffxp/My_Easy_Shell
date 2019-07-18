@@ -5,7 +5,7 @@ export PATH=$PATH:/usr/sbin
 # задаем переменные
 #-----------------
 vers="For Debian"
-ver="v0.0.2a"
+ver="v0.0.3"
 title="My Easy Shell"
 title_full="$title $ver"
 filename='myeasyshell.sh'
@@ -284,6 +284,29 @@ case "$pick" in
 
 
 
+8) #терминал
+chosen=8
+my_clear
+echo '┌──────────┐'
+echo '│ Терминал │'
+echo '└──────────┘'
+echo "Здесь вы можете ввести любую команду, которую поддерживает bash."
+echo "Кроме этого, поддерживаются внутренние команды $title"
+echo 'Такие как: myinstall, uninstall, openport, changelog, updatescript, about и др.'
+echo 'Для выхода из терминала наберите "exit" или "quit".'
+br
+echo "Введите команду:"
+read cmd
+if [ "$cmd" = "exit" ] || [ "$cmd" = "quit" ]
+then
+  chosen=0
+else
+  br
+  $cmd
+  br
+  wait
+fi
+;;
 
 9) #Обновить My Easy Shell
 echo "обновляю..."
