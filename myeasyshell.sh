@@ -204,22 +204,22 @@ pick=$chosen
 fi
 
 case "$pick" in
-    1) #Показать общую информацию о системе
-		my_clear
-		showinfo
-		br
-		#echo "Вычисляем Ваш IP на интерфейсе..."
-		#whatismyip
-		#my_clear
-		#showinfo
-		#br
-		#echo "Вычисляем Ваш внешний IP..."
-		#whatismyipext
-		#my_clear
-		#showinfo
-		#br
-		#wait
-    ;;
+1) #Показать общую информацию о системе
+	my_clear
+	showinfo
+	br
+	echo "Вычисляем Ваш IP на интерфейсе..."
+	#whatismyip
+	#my_clear
+	#showinfo
+	#br
+	#echo "Вычисляем Ваш внешний IP..."
+	#whatismyipext
+	#my_clear
+	#showinfo
+	#br
+	#wait
+;;
 
 
 
