@@ -67,16 +67,16 @@ kern=`uname -r | sed -e "s/-/ /" | awk {'print $1'}`
 installed(){
 
 exist=`dpkg -s $1 | grep Status | awk '{print $4}'`
-if [-n $xist] 
+if [ -z $exist ] 
 then 
+	echo $1" not installed"
+	exist="false"
+else
 	if [ $exist = "installed" ] 
 	then
 		echo $1" installed" #выводим результат
 		exist="true"
 	fi	
-else
-	echo $1" not installed"
-	exist="false"
 fi
 
 }
