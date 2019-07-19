@@ -5,7 +5,7 @@ export PATH=$PATH:/usr/sbin
 # задаем переменные
 #-----------------
 vers="For Debian"
-ver="v0.0.3c"
+ver="v0.0.3d"
 title="My Easy Shell"
 title_full="$title $ver"
 filename='myeasyshell.sh'
@@ -309,9 +309,9 @@ case "$pick" in
 			echo "Если вы уже добавляли репозитории сами или с помощью этой программы, то от вас ничего не требуется. В противном случае, их нужно добавить."
 			echo "Добавить репозитории?"
 			
-			myread_yn pick
-			
-			case "$pick" in
+			myread_yn picky
+			echo $picky
+			case "$picky" in
 				y|Y)
 			#	repo
 				echo "Установка репозиториев завершена."
