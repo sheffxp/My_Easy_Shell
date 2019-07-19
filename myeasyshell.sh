@@ -65,16 +65,20 @@ kern=`uname -r | sed -e "s/-/ /" | awk {'print $1'}`
 
 #Функция проверки установленного приложения, exist возвращает true если установлена и false, если нет.
 installed(){
-exist="false"
+
 exist=`dpkg -s $1 | grep Status | awk '{print $4}'`
-if [ $exist = "installed" ] 
-then
-   echo $1" installed" #выводим результат
-   exist="true"
+if [-n $xist] 
+then 
+	if [ $exist = "installed" ] 
+	then
+		echo $1" installed" #выводим результат
+		exist="true"
+	fi	
 else
-   echo $1" not installed"
-   exist="false"
+	echo $1" not installed"
+	exist="false"
 fi
+
 }
 
 #ifconfig | awk '/inet / {print substr($2, 1)}' | grep -v 127.0.0.1 | grep -v ::1
