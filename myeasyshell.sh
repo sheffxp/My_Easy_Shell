@@ -5,7 +5,7 @@ export PATH=$PATH:/usr/sbin
 # задаем переменные
 #-----------------
 vers="For Debian"
-ver="v0.0.3"
+ver="v0.0.3a"
 title="My Easy Shell"
 title_full="$title $ver"
 filename='myeasyshell.sh'
@@ -76,6 +76,27 @@ else
 fi
 }
 
+#ifconfig | awk '/inet / {print substr($2, 1)}' | grep -v 127.0.0.1 | grep -v ::1
+
+#определяем ip на интерфейсе
+whatismyip()
+{
+#whatismyiface
+#case "$osver1" in
+#4|5|6)
+#ip=`ifconfig $iface | grep 'inet addr' | awk {'print $2'} | sed s/.*://`
+#;;
+#7)
+#ip=`ifconfig $iface | grep 'inet' | sed q | awk {'print $2'}`
+#;;
+#*)
+#echo "Версия ОС неизвестна. Выходим."
+#wait
+ip=`ifconfig | awk '/inet / {print substr($2, 1)}' | grep -v 127.0.0.1 | grep -v ::1`
+;;
+esac
+}
+
 #определяем внешний IP через запрос
 whatismyipext()
 {
@@ -134,11 +155,11 @@ menu="
 ├───┼─────────────────────────────────────────┤ 
 │ 2 │ Работа с ОС                             │ 
 ├───┼─────────────────────────────────────────┤ 
-│ 3 │ Установить панель управления хостингом  │ 
+│ x │ Установить панель управления хостингом  │ 
 ├───┼─────────────────────────────────────────┤ 
-│ 4 │ Установка и настройка VPN-сервера       │ 
+│ x │ Установка и настройка VPN-сервера       │ 
 ├───┼─────────────────────────────────────────┤ 
-│ 5 │ Работа с Proxy                          │ 
+│ x │ Работа с Proxy                          │ 
 ├───┼─────────────────────────────────────────┤ 
 │ 6 │ Работа с файлами и программами          │ 
 ├───┼─────────────────────────────────────────┤ 
@@ -242,7 +263,7 @@ case "$pick" in
 		showinfo
 		br
 		echo "Вычисляем Ваш IP на интерфейсе..."
-		
+		whatismyip
 		my_clear
 		showinfo
 		br
