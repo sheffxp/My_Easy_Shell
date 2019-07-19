@@ -5,7 +5,7 @@ export PATH=$PATH:/usr/sbin
 # задаем переменные
 #-----------------
 vers="For Debian"
-ver="v0.0.3d"
+ver="v0.0.3c"
 title="My Easy Shell"
 title_full="$title $ver"
 filename='myeasyshell.sh'
@@ -144,9 +144,12 @@ eval $1=$temp
 myread_yn()
 {
 temp=""
+counter=0
 echo $temp
 while [ "$temp" != "y" ] && ["$temp" != "Y" ] && [ "$temp" != "n" ] && [ "$temp" != "N" ] #запрашиваем значение, пока не будет "y" или "n"
 do
+if [ $counter -ne 0 ]; then echo -n "Неправильный выбор. Ведите цифру: "; fi
+counter=$(($counter+1))
 echo "y/n: "
 read temp
 echo
