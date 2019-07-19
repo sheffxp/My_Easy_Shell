@@ -144,12 +144,9 @@ eval $1=$temp
 myread_yn()
 {
 temp=""
-counter=0
 echo $temp
 while [ "$temp" != "y" ] && ["$temp" != "Y" ] && [ "$temp" != "n" ] && [ "$temp" != "N" ] #запрашиваем значение, пока не будет "y" или "n"
 do
-if [ $counter -ne 0 ]; then echo -n "Неправильный выбор. y/n: "; fi
-counter=$(($counter+1))
 echo "y/n: "
 read temp
 echo
@@ -300,9 +297,9 @@ case "$pick" in
 	2) #Провести тест скорости CPU
 		my_clear
 		installed sysbench
-		echo $exist
-		wait
-		wait
+		
+		
+		
 		
 		if [ $exist = "false" ]; then
 			echo "Сейчас будет произведена установка программы sysbench. Но для её установки нужно наличие добавленного репозитория EPEL."
