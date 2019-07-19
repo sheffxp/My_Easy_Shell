@@ -5,7 +5,7 @@ export PATH=$PATH:/usr/sbin
 # задаем переменные
 #-----------------
 vers="For Debian"
-ver="v0.0.3c"
+ver="v0.0.3d"
 title="My Easy Shell"
 title_full="$title $ver"
 filename='myeasyshell.sh'
