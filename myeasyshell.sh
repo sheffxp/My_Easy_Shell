@@ -5,7 +5,7 @@ export PATH=$PATH:/usr/sbin
 # задаем переменные
 #-----------------
 vers="For Debian"
-ver="v0.0.3a"
+ver="v0.0.3b"
 title="My Easy Shell"
 title_full="$title $ver"
 filename='myeasyshell.sh'
@@ -65,6 +65,7 @@ kern=`uname -r | sed -e "s/-/ /" | awk {'print $1'}`
 
 #Функция проверки установленного приложения, exist возвращает true если установлена и false, если нет.
 installed(){
+exist="false"
 exist=`dpkg -s $1 | grep Status`
 if [ $exist = "Status: install ok installed" ] 
 then
@@ -129,6 +130,19 @@ while [ "$temp" != "0" ] && [ "$temp" != "1" ] && [ "$temp" != "2" ] && [ "$temp
 do
 if [ $counter -ne 0 ]; then echo -n "Неправильный выбор. Ведите цифру: "; fi
 counter=$(($counter+1))
+read temp
+echo
+done
+eval $1=$temp
+}
+
+#функция, которая запрашивает только да или нет
+myread_yn()
+{
+temp=""
+while [ "$temp" != "y" ] && ["$temp" != "Y" ] && [ "$temp" != "n" ] && [ "$temp" != "N" ] #запрашиваем значение, пока не будет "y" или "n"
+do
+echo -n "y/n: "
 read temp
 echo
 done
@@ -282,14 +296,14 @@ case "$pick" in
 			echo "Сейчас будет произведена установка программы sysbench. Но для её установки нужно наличие добавленного репозитория EPEL."
 			echo "Если вы уже добавляли репозитории сами или с помощью этой программы, то от вас ничего не требуется. В противном случае, их нужно добавить."
 			echo "Добавить репозитории?"
-			
-			#myread_yn pick
-			#case "$pick" in
-			#	y|Y)
+			myread_yn pick
+			case "$pick" in
+				y|Y)
 			#	repo
-			#	echo "Установка репозиториев завершена."
-			#	;;
-			#esac
+				echo "Установка репозиториев завершена."
+				wait
+				;;
+			esac
 			#myinstall sysbench
 		fi
 		my_clear
