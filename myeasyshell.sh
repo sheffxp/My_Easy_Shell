@@ -296,20 +296,28 @@ case "$pick" in
 	2) #Провести тест скорости CPU
 		my_clear
 		installed sysbench
+		echo $exist
+		wait
+		wait
+		
 		if [ $exist = "false" ]; then
 			echo "Сейчас будет произведена установка программы sysbench. Но для её установки нужно наличие добавленного репозитория EPEL."
 			echo "Если вы уже добавляли репозитории сами или с помощью этой программы, то от вас ничего не требуется. В противном случае, их нужно добавить."
 			echo "Добавить репозитории?"
+			
 			myread_yn pick
+			
 			case "$pick" in
 				y|Y)
 			#	repo
 				echo "Установка репозиториев завершена."
-				wait
 				;;
 			esac
 			#myinstall sysbench
 		fi
+		wait
+		wait
+		
 		my_clear
 		echo "Сейчас будет произведен тест скорости процессора. Ждите..."
 		#bench_cpu
