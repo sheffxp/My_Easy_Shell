@@ -144,9 +144,10 @@ eval $1=$temp
 myread_yn()
 {
 temp=""
+echo $temp
 while [ "$temp" != "y" ] && ["$temp" != "Y" ] && [ "$temp" != "n" ] && [ "$temp" != "N" ] #запрашиваем значение, пока не будет "y" или "n"
 do
-echo -n "y/n: "
+echo "y/n: "
 read temp
 echo
 done
