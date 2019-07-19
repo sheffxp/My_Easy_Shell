@@ -93,8 +93,8 @@ whatismyip()
 #echo "Версия ОС неизвестна. Выходим."
 #wait
 ip=`ifconfig | awk '/inet / {print substr($2, 1)}' | grep -v 127.0.0.1 | grep -v ::1`
-;;
-esac
+#;;
+#esac
 }
 
 #определяем внешний IP через запрос
