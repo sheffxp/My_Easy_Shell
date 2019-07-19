@@ -5,7 +5,7 @@ export PATH=$PATH:/usr/sbin
 # задаем переменные
 #-----------------
 vers="For Debian"
-ver="v0.0.3b"
+ver="v0.0.3a"
 title="My Easy Shell"
 title_full="$title $ver"
 filename='myeasyshell.sh'
@@ -66,7 +66,7 @@ kern=`uname -r | sed -e "s/-/ /" | awk {'print $1'}`
 #Функция проверки установленного приложения, exist возвращает true если установлена и false, если нет.
 installed(){
 exist=`dpkg -s $1 | grep Status`
-if [ -n "$exist" ] #проверяем что нашли строку со статусом (что строка не пуста)
+if [ $exist = "Status: install ok installed" ] 
 then
    echo $1" installed" #выводим результат
    exist="true"
